@@ -2,6 +2,10 @@
 # currently.
 # https://micropyramid.com/blog/understand-self-and-__init__-method-in-python-class/
 
+# Put the Player class in player.py.
+
+# Players should have a name and current_room attributes
+
 
 from room import Room
 
@@ -12,6 +16,6 @@ class Player:
         self.current_room = current_room
 
     def __str__(self):
-        output = f'Welcome {self.name} to the game. Your location is in the {self.current_room}.'
+        output = f'{self.name}, your current location is in the {self.current_room}.'
 
         return output
