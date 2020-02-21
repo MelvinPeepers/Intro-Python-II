@@ -40,15 +40,36 @@ room['treasure'].s_to = room['narrow']
 
 # Make a new player object that is currently in the 'outside' room.
 player_one = Player('Player', room['outside'])
-print(player_one)
 
 # Write a loop that:
 #
-# * Prints the current room name
-# * Prints the current description (the textwrap module might be useful here).
-# * Waits for user input and decides what to do.
-#
-# If the user enters a cardinal direction, attempt to move to the room there.
-# Print an error message if the movement isn't allowed.
-#
-# If the user enters "q", quit the game.
+done = False
+while not done:
+    current_room = player_one.current_room
+    print(player_one)
+
+    user_input = input("enter a command: ")
+    # exiting the program
+    if user_input == 'q':
+        done = True
+
+    if user_input == 'w':
+        if current_room.w_to:
+            player_one.current_room = current_room.w_to
+    elif user_input == 'e':
+        if current_room.e_to:
+            player_one.current_room = current_room.e_to
+    elif user_input == 's':
+        if current_room.s_to:
+            player_one.current_room = current_room.s_to
+    elif user_input == 'n':
+        if current_room.n_to:
+            player_one.current_room = current_room.n_to
+        # * Prints the current room name
+        # * Prints the current description (the textwrap module might be useful here).
+        # * Waits for user input and decides what to do.
+        #
+        # If the user enters a cardinal direction, attempt to move to the room there.
+        # Print an error message if the movement isn't allowed.
+        #
+        # If the user enters "q", quit the game.
