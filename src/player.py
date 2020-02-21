@@ -6,6 +6,9 @@
 
 # Players should have a name and current_room attributes
 
+# MVP 2
+# Add capability to add Items to the player's inventory. The inventory can also be a list of items "in" the player, similar to how Items can be in a Room.
+
 
 from room import Room
 
@@ -15,7 +18,5 @@ class Player:
         self.name = name
         self.current_room = current_room
 
-    def __str__(self):
-        output = f'{self.name}, your current location is in the {self.current_room}.'
-
-        return output
+    # def __str__(self):
+    #     return f'{self.name}, your current location is in the {self.current_room}.'
