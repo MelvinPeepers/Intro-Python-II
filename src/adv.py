@@ -77,6 +77,9 @@ while True:
         exit()
     else:
         print("I did not understand that command.")
+
+
+# my original code
 # # Write a loop that:
 # #
 # done = False

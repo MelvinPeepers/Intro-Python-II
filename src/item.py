@@ -7,15 +7,30 @@
 
 
 class Item:
-    def __init__(self, name, description):
+    def __init__(self, name, description, size, color, weight):
         self.name = name
         self.description = description
+        self.size = size
+        self.color = color
+        self.weight = weight
 
     def __str__(self):
         output = f' You see a {self.description} {self.name}.'
 
         return output
 
+    def pickup(self):
+        return(f'???')
 
-i = Item("rock", "big")
-print(i)
+
+class Rock(Item):
+    def __init__(self, name, size):
+        super().__init__(name, "solid", size, "grey", "heavy")
+
+    def pickup(self):
+        return(f'You pickup {self.size} {self.name}.')
+
+
+i = Item("Candlestick", "metal", "long", "gold", "heavy")
+r = Rock("rock", "big")
+print(r.pickup())
