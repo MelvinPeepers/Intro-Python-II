@@ -37,7 +37,8 @@ class Candle_stick(Item):
 
     def __str__(self):
         return super().__str__() + (f" that's {self.make}")
-\
+
+
 class Silver_Bullets(Item):
     def __init__(self, name, description, quantity):
         super().__init__(name, description)  # a way to access Parent Product Class
@@ -47,10 +48,27 @@ class Silver_Bullets(Item):
         return super().__str__() + (f" {self.quantity}")
 
 
+class Revolver(Item):
+    def __init__(self, name, description, caliber):
+        super().__init__(name, description)  # a way to access Parent Product Class
+        self.caliber = caliber
+
+    def __str__(self):
+        return super().__str__() + (f" {self.caliber}")
+
+
 i = Item("Treasure box", "empty")
 r = Rock("rock", "bloody", "big")
 c = Candle_stick("Candlestick", "deadly", "gold")
 s = Silver_Bullets("Silver Bullets", "shiny", "6")
-# print(r.pickup())
-# print(i)
+g = Revolver("Colt", "templated", ".45")
+print(i)
+print(r)
+print(c)
 print(s)
+print(g)
+print(i.pickup())
+print(r.pickup())
+print(c.pickup())
+print(s.pickup())
+print(g.pickup())
