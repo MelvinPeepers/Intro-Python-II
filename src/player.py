@@ -14,7 +14,7 @@ from room import Room
 
 
 class Player:
-    def __init__(self, name, current_room=None):
+    def __init__(self, name, current_room=None, inventory=[]):
         self.name = name
         self.current_room = current_room
 

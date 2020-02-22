@@ -9,19 +9,20 @@
 # MVP 2
 # Add the ability to add items to rooms.
 
-# The Room class should be extended with a list that holds the Items that are currently in that room.
+# The Room class should be extended with a list that holds the Items that are currently in that room. <check>
 
 # Add functionality to the main loop that prints out all the items that are visible to the player when they are in that room.
 
 
 class Room:
-    def __init__(self, title, description):
+    def __init__(self, title, description, items=[]):
         self.title = title
         self.description = description
         self.n_to = None
         self.s_to = None
         self.e_to = None
         self.w_to = None
+        self.items = items
 
     def __str__(self):
         return f'{self.title}\n{self.description}'
